@@ -1,0 +1,15 @@
+name: 'Clean GitHub Images'
+description: 'Remove github docker images that have been created via PRs'
+
+inputs:
+  name: { description: 'The user name the package is owned by' }
+  org: { description: 'The org name the package is owned by' }
+  token: { description: 'Optional token if your default one does not have the correct permissions' }
+
+  package:
+    required: true
+    description: The package name you want to clean
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

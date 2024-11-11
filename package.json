@@ -1,0 +1,19 @@
+{
+  "name": "@adeattwood/clean-github-images",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "ncc build -d ./src/main.ts -o dist",
+    "run": "local-action run . ./src/run.ts .env"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  },
+  "devDependencies": {
+    "@github/local-action": "^2.2.0",
+    "@types/node": "^22.9.0",
+    "@vercel/ncc": "^0.38.2",
+    "typescript": "^5.6.3"
+  }
+}
