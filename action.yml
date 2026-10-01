@@ -10,6 +10,15 @@ inputs:
     required: true
     description: The package name you want to clean
 
+  tag-pattern:
+    description: 'Optional regular expression selecting tagged versions for retention'
+  pr-pattern:
+    description: 'Regular expression for PR tags, with the PR number in the first capture group'
+    default: '^pr-([0-9]+)$'
+  keep:
+    description: 'Number of versions to retain in each of the untagged and pattern-matching groups, newest first'
+    default: '10'
+
 runs:
   using: 'node20'
   main: 'dist/index.js'
