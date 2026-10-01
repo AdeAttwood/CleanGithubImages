@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "ncc build -d ./src/main.ts -o dist",
-    "run": "local-action run . ./src/run.ts .env"
+    "run": "local-action run . ./src/run.ts .env",
+    "test": "ncc build ./test/retention.ts -o .test-dist && node --test .test-dist/index.js"
   },
   "dependencies": {
     "@actions/core": "^1.11.1"
